@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Essential SEO Metadata -->
+    <title>Mafiz Uddin Chowdhury | Backend & Machine Learning Engineer</title>
+    <meta name="description" content="Portfolio of Mafizuddin Chowdhury, a 7th-semester CST student specializing in Python backend architecture, Django, and Machine Learning systems with PyTorch.">
+    <meta name="keywords" content="Mafizuddin Chowdhury, Salah Uddin, Backend Developer, Machine Learning, Django, Python, PyTorch, Portfolio, Feni Computer Institute">
+    <meta name="author" content="Mafizuddin Chowdhury">
+
+    <!-- Open Graph / LinkedIn / Facebook Metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mafiz Uddin Chowdhury | Backend & Machine Learning Engineer">
+    <meta property="og:description" content="Explore technical case studies, production-ready system architectures, and optimized Python/Django codebases.">
+    <meta property="og:url" content="https://github.com/mozo001">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Mermaid.js for System Architecture Diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'dark',
+            themeVariables: {
+                background: '#141414',
+                primaryColor: '#1e293b',
+                primaryTextColor: '#f5f5f5',
+                lineColor: '#3b82f6'
+            }
+        });
+    </script>
+
+    <style>
+        :root {
+            --bg-base: #0a0a0c;
+            --bg-surface: #121318;
+            --bg-card: #1c1d24;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --border: #2e3039;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-bottom: 4rem;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero & Banner Section */
+        header {
+            padding: 5rem 0 3.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .availability-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-text {
+            max-width: 750px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.6rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2563eb;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-surface);
+            border-color: var(--text-secondary);
+        }
+
+        /* Technical Proficiencies Section */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        /* Case Studies Section */
+        .case-study {
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .case-study:last-child {
+            margin-bottom: 0;
+        }
+
+        .case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-title-area h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .case-tech-stack {
+            font-family: monospace;
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 850px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .narrative-block {
+            margin-bottom: 1.25rem;
+        }
+
+        .narrative-block h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .narrative-block p {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        /* Architecture Block */
+        .architecture-block {
+            background-color: var(--bg-base);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        /* Metrics Display Panel */
+        .metrics-panel {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            height: fit-content;
+        }
+
+        .metrics-panel h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .metric-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .metric-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .metric-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .metric-bar-bg {
+            background-color: var(--bg-base);
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .metric-bar-fill {
+            height: 100%;
+            background-color: var(--accent-green);
+            border-radius: 3px;
+        }
+
+        /* Education Layout */
+        .edu-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .edu-meta h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .edu-institution {
+            color: var(--accent-blue);
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        .edu-gpa {
+            margin-top: 0.5rem;
+            font-weight: 600;
+            color: var(--accent-green);
+        }
+
+        .edu-date {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-family: monospace;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO / BIO SECTION -->
+    <header>
+        <div class="container">
+            <div class="availability-badge">
+                <span>● Actively seeking 8th-Semester Industrial Training Internship (Early 2027)</span>
+            </div>
+            <h1>Mafiz Uddin Chowdhury</h1>
+            <p class="subtitle">Backend Systems Architecture & Machine Learning Engineering</p>
+            <p class="bio-text">
+                7th-semester Computer Science & Technology student with a strong baseline in building robust server-side infrastructures and computational pipelines. Specializing in Python, Django optimization, and deep learning implementations using PyTorch inside cleanly organized Unix dev environments.
+            </p>
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">Download Complete CV (PDF)</a>
+                <a href="https://github.com/mozo001" target="_blank" class="btn btn-secondary">Explore GitHub Engine Room</a>
+                <a href="mafizchowdhury006@gmail.com" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- TECHNICAL PROFICIENCIES -->
+        <section id="skills">
+            <h2>Technical Proficiencies</h2>
+            <div class="skills-grid">
+                <div class="skill-card" style="border-top: 3px solid var(--accent-green);">
+                    <h3>AI & Machine Learning</h3>
+                    <div class="tag-container">
+                        <span class="tag">Python</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Scikit-Learn</span>
+                        <span class="tag">NumPy</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                </div>
+                <div class="skill-card" style="border-top: 3px solid var(--accent-blue);">
+                    <h3>Backend Architecture</h3>
+                    <div class="tag-container">
+                        <span class="tag">Django</span>
+                        <span class="tag">Django ORM</span>
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">SQL Database Design</span>
+                        <span class="tag">HTML5/CSS3</span>
+                    </div>
+                </div>
+                <div class="skill-card" style="border-top: 3px solid var(--text-secondary);">
+                    <h3>Infrastructure & Environment</h3>
+                    <div class="tag-container">
+                        <span class="tag">Arch Linux</span>
+                        <span class="tag">Fedora Linux</span>
+                        <span class="tag">Hyprland WM</span>
+                        <span class="tag">Shell Scripting</span>
+                        <span class="tag">Git / GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT CASE STUDIES -->
+        <section id="projects">
+            <h2>Engineering Case Studies</h2>
+
+            <!-- CASE STUDY 1: FOOTBALL AI -->
+            <article class="case-study">
+                <div class="case-header">
+                    <div class="case-title-area">
+                        <h3>Football AI Analytics Pipeline</h3>
+                        <p class="case-tech-stack">Python  • OpenCV • Scikit-Learn</p>
+                    </div>
+                    <div class="case-actions">
+                        <a href="https://github.com/mozo001" target="_blank" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Source Code</a>
+                    </div>
+                </div>
+
+                <div class="case-grid">
+                    <div class="case-narrative">
+                        <div class="narrative-block">
+                            <h4>The Problem</h4>
+                            <p>Extracting high-fidelity tracking matrices and directional motion tracking logs from raw broadcast football footage, handling rapid frame shifts and overlapping multi-object collisions without dropping execution frame rates.</p>
+                        </div>
+                        <div class="narrative-block">
+                            <h4>My Role & Implementation</h4>
+                            <p>Engineered the computer vision data ingestion worker. Configured object localization regions using PyTorch models and organized custom spatial feature extractions across sequential matrices.</p>
+                        </div>
+                        <div class="narrative-block">
+                            <h4>The Hurdle & Technical Solution</h4>
+                            <p><strong>Challenge:</strong> Serious tracking target loss and identity flipping errors when multiple players grouped closely together or crossed tracking lines.
+                            <br><strong>Solution:</strong> Rewrote bounding-box calculations to utilize cross-frame intersection metrics coupled with data association logic, drastically smoothing identification paths through occlusion windows.</p>
+                        </div>
+                    </div>
+
+                    <div class="metrics-panel">
+                        <h4>System Performance Metrics</h4>
+                        <div class="metric-item">
+                            <div class="metric-info"><span>Target Tracking Precision</span> <span>85%</span></div>
+                            <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-info"><span>Inference Processing Speed</span> <span>24 FPS</span></div>
+                            <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 72%; background-color: var(--accent-blue);"></div></div>
+                        </div>
+                        <div style="margin-top: 1.5rem; text-align: center;">
+                            <a href="#" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.4rem 1rem; width: 100%; justify-content: center;">Launch Gradio Demo on Hugging Face</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="architecture-block">
+                    <div class="mermaid">
+                        graph LR
+                        Video[Raw Video Source] --> CV[OpenCV Frame Parser]
+                        CV --> Inference[PyTorch Inference Engine]
+                        Inference --> Tracking[Data Association Matrix]
+                        Tracking --> Output[Structured Tracking Metrics]
+                    </div>
+                </div>
+            </article>
+
+            <!-- CASE STUDY 2: FINANCE TRACKER -->
+            <article class="case-study">
+                <div class="case-header">
+                    <div class="case-title-area">
+                        <h3>AI Finance Tracker Backend</h3>
+                        <p class="case-tech-stack">Python • Django • PostgreSQL • Django ORM</p>
+                    </div>
+                    <div class="case-actions">
+                        <a href="https://github.com/mozo001" target="_blank" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Source Code</a>
+                    </div>
+                </div>
+
+                <div class="case-grid">
+                    <div class="case-narrative">
+                        <div class="narrative-block">
+                            <h4>The Problem</h4>
+                            <p>Designing a reliable API ledger backend system capable of managing multiple concurrent transaction streams, ensuring strict data calculation accuracy, and prepping structured datasets for model analysis.</p>
+                        </div>
+                        <div class="narrative-block">
+                            <h4>My Role & Implementation</h4>
+                            <p>Architected the relational model constraints and engineered the token-based security verification layer. Developed custom validation patterns to handle strict mathematical transaction structures.</p>
+                        </div>
+                        <div class="narrative-block">
+                            <h4>The Hurdle & Technical Solution</h4>
+                            <p><strong>Challenge:</strong> Significant latency overhead and database slowdowns during serialized operations tracking historical transaction rows (the classic N+1 query vulnerability).
+                            <br><strong>Solution:</strong> Overhauled view layers to utilize preloaded relational hooks via select_related and prefetch_related, reducing standard lookup query counts from over 100 calls down to single-digit operations.</p>
+                        </div>
+                    </div>
+
+                    <div class="metrics-panel">
+                        <h4>Infrastructure Metrics</h4>
+                        <div class="metric-item">
+                            <div class="metric-info"><span>Database Query Latency</span> &lt; 50ms</div>
+                            <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 95%;"></div></div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-info"><span>Test Suite Coverage</span> <span>100%</span></div>
+                            <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 100%; background-color: var(--accent-blue);"></div></div>
+                        </div>
+                        <div style="margin-top: 1.5rem; text-align: center;">
+                            <a href="#" class="btn btn-primary" style="font-size: 0.85rem; padding: 0.4rem 1rem; width: 100%; justify-content: center;">Inspect API Endpoint (Live Node)</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="architecture-block">
+                    <div class="mermaid">
+                        graph LR
+                        Client[Client Request] --> Auth[Custom Token Validation Middleware]
+                        Auth --> Views[Optimized Django View Layer]
+                        Views --> ORM[ORM Engine: select_related]
+                        ORM --> DB[(PostgreSQL Instanced Storage)]
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- ACADEMIC BACKGROUND -->
+        <section id="education">
+            <h2>Academic Background</h2>
+            <div class="edu-row">
+                <div class="edu-meta">
+                    <h3>Diploma in Computer Science and Technology (CST)</h3>
+                    <p class="edu-institution">Feni Computer Institute (FCI)</p>
+                    <p class="edu-gpa">Current Cumulative GPA: 3.81</p>
+                </div>
+                <div class="edu-date">
+                    <span>2023 — 2027 (Expected)</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Mafiz Uddin Chowdhury. Explicitly built for structural transparency, stability, and speed.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
